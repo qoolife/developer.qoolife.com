@@ -17,6 +17,12 @@
       .sidebar-nav {
         padding: 9px 0;
       }
+
+      .console {
+        background-color: #000;
+        color: #FFF;
+        font-weight: bold;
+      }
     </style>
     <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
 
@@ -84,6 +90,17 @@
 <p>If you do authenticate, it will return:</p>
 
 <pre><code>{:hello =&gt; 'username'}
+</code></pre>
+
+<p>Example request:</p>
+
+<pre class="console">
+curl -u 'user@example.com' https://qoolife.com/api/v1/hello
+</pre>
+
+<p>Response:</p>
+
+<pre><code>{:hello =&gt; 'Joe'}
 </code></pre>
         </div><!--/span-->
       </div><!--/row-->

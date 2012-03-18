@@ -15,3 +15,13 @@ If you don't authenticate, it will return:
 If you do authenticate, it will return:
 
     {:hello => 'username'}
+
+Example request:
+
+<pre class="console">
+curl -u 'user@example.com' https://qoolife.com/api/v1/hello
+</pre>
+
+Response:
+
+    {:hello => 'Joe'}

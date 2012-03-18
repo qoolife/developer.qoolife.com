@@ -17,6 +17,12 @@
       .sidebar-nav {
         padding: 9px 0;
       }
+
+      .console {
+        background-color: #000;
+        color: #FFF;
+        font-weight: bold;
+      }
     </style>
     <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
 
@@ -73,8 +79,28 @@
 
 <p>You can get all info for the authenticated user from</p>
 
-<pre><code>GET /api/v1/users/info
-</code></pre>
+<pre>
+GET /api/v1/users/login
+</pre>
+
+<p>Example request:</p>
+
+<pre class="console">
+curl -v -u 'user@example.com:sekret' https://qoolife.com/api/v1/users/login
+</pre>
+
+<p>Response:</p>
+
+<pre>
+HTTP/1.1 200 OK
+
+{
+  "id":1,
+  "email":"user@example.com",
+  "first_name":"First Name",
+  "last_name":"Last Name"
+}
+</pre>
         </div><!--/span-->
       </div><!--/row-->
 

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Qoolife API V1 Journal Entries Listing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -16,6 +16,12 @@
       }
       .sidebar-nav {
         padding: 9px 0;
+      }
+
+      .console {
+        background-color: #000;
+        color: #FFF;
+        font-weight: bold;
       }
     </style>
     <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -71,10 +77,66 @@
         <div class="span10">
           <h1 id="journal-entries-listing">Journal Entries Listing</h1>
 
-<p>You can get all journal entries for the authenticated user with:</p>
+<p>You can get all journal entries for the authenticated user from:</p>
 
-<pre><code>GET /api/v1/journal_entries
-</code></pre>
+<pre>
+GET /api/v1/journal_entries
+</pre>
+
+<p>The response will be a JSON array with all the journal entries for the user, including an array of measurements for each individual entry.</p>
+
+<p>Example request:</p>
+
+<pre class="console">
+curl -v -u 'user@example.com:sekret' https://qoolife.com/api/v1/journal_entries
+</pre>
+
+<p>Response:</p>
+
+<pre>
+HTTP/1.1 200 OK
+
+[
+  {
+    "id":202,
+    "author_id":1,
+    "user_id":1,
+    "body":"Id autem",
+    "body_html":"&lt;p&gt;Id autem&lt;/p&gt;",
+    "comments_count":0,
+    "private":false,
+    "date":"2011-07-18T09:41:00+02:00",
+    "created_at":"2011-07-19T09:41:47+02:00",
+    "updated_at":"2011-11-30T16:48:24+01:00",
+    "measurements":[
+      {
+        "created_at":"2011-07-19T09:41:47+02:00",
+        "date":"2011-07-18T09:41:00+02:00",
+        "float_value":68.0,
+        "id":99,
+        "int_value":null,
+        "journal_entry_id":202,
+        "text_value":"68.0",
+        "updated_at":"2011-11-30T16:48:24+01:00",
+        "user_id":1,
+        "variable_id":1
+      },
+      {
+        "created_at":"2011-07-19T09:41:47+02:00",
+        "date":"2011-07-18T09:41:00+02:00",
+        "float_value":null,
+        "id":100,
+        "int_value":0,
+        "journal_entry_id":202,
+        "text_value":null,
+        "updated_at":"2011-09-05T20:56:09+02:00",
+        "user_id":1,
+        "variable_id":3
+      }
+    ]
+  }
+]
+</pre>
         </div><!--/span-->
       </div><!--/row-->
 
