@@ -46,3 +46,48 @@ HTTP/1.1 201 Created
   "measurements":[]
 }
 </pre>
+
+## Measurements
+
+You can add measurements to the journal entry by nesting the measurement attributes like this:
+
+<pre class="console">
+curl -u 'user@example.com:sekret' -X POST -d "journal_entry[body]=a private entry for October 5th 15:35;journal_entry[date]=2012-10-05T15:35;journal_entry[measurements_attributes][0][value]=80;journal_entry[measurements_attributes][0][variable_id]=1;" http://localhost:3000/api/v1/journal_entries
+</pre>
+
+Response:
+
+<pre>
+HTTP/1.1 201 Created
+
+{
+  "id":609,
+  "user_id":1,
+  "author_id":1,
+  "body":"a private entry for October 5th 15:35",
+  "body_html":"&lt;p&gt;a private entry for October 5th 15:35&lt;/p&gt;",
+  "private":true,
+  "date":"2012-10-05T15:35:00+02:00",
+  "created_at":"2012-03-18T10:40:30+01:00",
+  "updated_at":"2012-03-18T10:40:30+01:00",
+  "comments_count":0,
+  "measurements":
+		[{
+			"created_at":"2013-04-19T13:32:42+02:00",
+			"date":"2012-10-05T15:35:00+02:00",
+			"float_value":80.0,
+			"id":8305,
+			"int_value":null,
+			"journal_entry_id":609,
+			"questionnaire_response_id":null,
+			"text_value":"80",
+			"updated_at":"2013-04-19T13:32:42+02:00",
+			"user_id":1,
+			"variable_id":1
+		}]
+	}
+}
+</pre>
+
+Note that at the moment you need to know the variable_id in advance. Use 1 (Weight) for testing purposes.
+
