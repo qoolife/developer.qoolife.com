@@ -23,44 +23,39 @@ Response:
 <pre>
 HTTP/1.1 200 OK
 
-[
-  {
-    "id":202,
-    "author_id":1,
-    "user_id":1,
-    "body":"Id autem",
-    "body_html":"&lt;p&gt;Id autem&lt;/p&gt;",
-    "comments_count":0,
-    "private":false,
-    "date":"2011-07-18T09:41:00+02:00",
-    "created_at":"2011-07-19T09:41:47+02:00",
-    "updated_at":"2011-11-30T16:48:24+01:00",
-    "measurements":[
-      {
-        "created_at":"2011-07-19T09:41:47+02:00",
-        "date":"2011-07-18T09:41:00+02:00",
-        "float_value":68.0,
-        "id":99,
-        "int_value":null,
-        "journal_entry_id":202,
-        "text_value":"68.0",
-        "updated_at":"2011-11-30T16:48:24+01:00",
-        "user_id":1,
-        "variable_id":1
-      },
-      {
-        "created_at":"2011-07-19T09:41:47+02:00",
-        "date":"2011-07-18T09:41:00+02:00",
-        "float_value":null,
-        "id":100,
-        "int_value":0,
-        "journal_entry_id":202,
-        "text_value":null,
-        "updated_at":"2011-09-05T20:56:09+02:00",
-        "user_id":1,
-        "variable_id":3
-      }
-    ]
-  }
-]
+{
+  "journal_entries":
+   [{
+      "id":609,
+      "user_id":1,
+      "author_id":1,
+      "body":"a private entry for October 5th 15:35",
+      "date":"2012-10-05T15:35:00+02:00",
+      "created_at":"2012-03-18T10:40:30+01:00",
+      "updated_at":"2012-03-18T10:40:30+01:00",
+      "measurements":
+    		[{
+    			"id":8305,
+    			"journal_entry_id":609,
+    			"user_id":1,
+    			"int_value":null,
+    			"float_value":80.0,
+    			"text_value":"80",
+    			"variable_id":1,
+    			"created_at":"2013-04-19T13:32:42+02:00",
+    			"updated_at":"2013-04-19T13:32:42+02:00"
+    		}]
+    },
+    {
+      "id":610,
+      "user_id":1,
+      "author_id":1,
+      "body":"a private entry for October 6th 16:36",
+      "date":"2012-10-05T15:35:00+02:00",
+      "created_at":"2012-03-18T10:40:30+01:00",
+      "updated_at":"2012-03-18T10:40:30+01:00",
+      "measurements": []
+    }
+  ]
+}
 </pre>
