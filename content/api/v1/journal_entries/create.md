@@ -19,8 +19,6 @@ POST /api/v1/journal_entries
 	<dd>Boolean value to indicate if the entry will be marked as private. Can be 1 (true) or 0 (false). By default, it's false so you only need to include this param if you want to set it to true.</dd>
 </dl>
 
-Currently the API does not support creating measurements for the entries.
-
 Example request:
 
 <pre class="console">
@@ -33,17 +31,17 @@ Response:
 HTTP/1.1 201 Created
 
 {
-  "id":609,
-  "user_id":1,
-  "author_id":1,
-  "body":"a private entry for October 5th 15:35",
-  "body_html":"&lt;p&gt;a private entry for October 5th 15:35&lt;/p&gt;",
-  "private":true,
-  "date":"2012-10-05T15:35:00+02:00",
-  "created_at":"2012-03-18T10:40:30+01:00",
-  "updated_at":"2012-03-18T10:40:30+01:00",
-  "comments_count":0,
-  "measurements":[]
+  "journal_entry":
+    {
+      "id":609,
+      "user_id":1,
+      "author_id":1,
+      "body":"a private entry for October 5th 15:35",
+      "date":"2012-10-05T15:35:00+02:00",
+      "created_at":"2012-03-18T10:40:30+01:00",
+      "updated_at":"2012-03-18T10:40:30+01:00",
+      "measurements": []
+    }
 }
 </pre>
 
@@ -61,31 +59,28 @@ Response:
 HTTP/1.1 201 Created
 
 {
-  "id":609,
-  "user_id":1,
-  "author_id":1,
-  "body":"a private entry for October 5th 15:35",
-  "body_html":"&lt;p&gt;a private entry for October 5th 15:35&lt;/p&gt;",
-  "private":true,
-  "date":"2012-10-05T15:35:00+02:00",
-  "created_at":"2012-03-18T10:40:30+01:00",
-  "updated_at":"2012-03-18T10:40:30+01:00",
-  "comments_count":0,
-  "measurements":
-		[{
-			"created_at":"2013-04-19T13:32:42+02:00",
-			"date":"2012-10-05T15:35:00+02:00",
-			"float_value":80.0,
-			"id":8305,
-			"int_value":null,
-			"journal_entry_id":609,
-			"questionnaire_response_id":null,
-			"text_value":"80",
-			"updated_at":"2013-04-19T13:32:42+02:00",
-			"user_id":1,
-			"variable_id":1
-		}]
-	}
+  "journal_entry":
+    {
+      "id":609,
+      "user_id":1,
+      "author_id":1,
+      "body":"a private entry for October 5th 15:35",
+      "date":"2012-10-05T15:35:00+02:00",
+      "created_at":"2012-03-18T10:40:30+01:00",
+      "updated_at":"2012-03-18T10:40:30+01:00",
+      "measurements":
+    		[{
+    			"id":8305,
+    			"journal_entry_id":609,
+    			"user_id":1,
+    			"int_value":null,
+    			"float_value":80.0,
+    			"text_value":"80",
+    			"variable_id":1,
+    			"created_at":"2013-04-19T13:32:42+02:00",
+    			"updated_at":"2013-04-19T13:32:42+02:00"
+    		}]
+    }
 }
 </pre>
 
