@@ -46,7 +46,8 @@ HTTP/1.1 200 OK
         "text_value":"68.0",
         "updated_at":"2011-11-30T16:48:24+01:00",
         "user_id":1,
-        "variable_id":1
+        "variable_id":1,
+				"variable_name":"weight"
       },
       {
         "created_at":"2011-07-19T09:41:47+02:00",
@@ -58,7 +59,8 @@ HTTP/1.1 200 OK
         "text_value":null,
         "updated_at":"2011-09-05T20:56:09+02:00",
         "user_id":1,
-        "variable_id":3
+        "variable_id":3,
+				"variable_name":"height"
       }
     ]
   }

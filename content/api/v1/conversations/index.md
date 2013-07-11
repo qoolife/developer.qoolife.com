@@ -31,6 +31,7 @@ HTTP/1.1 200 OK
 		"status":"resolved",
 		"delta": false,
     "title":"Id autem",
+		"type_human":"private message",
 		"posts_count":6,
     "created_at":"2011-07-19T09:41:47+02:00",
     "updated_at":"2011-11-30T16:48:24+01:00",
