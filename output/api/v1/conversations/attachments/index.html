@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Qoolife API V1 Conversations Listing</title>
+    <title>Qoolife API V1 Conversations Posting (replying)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -84,76 +84,54 @@
         </div><!--/span-->
 
         <div class="span10">
-          <h1 id="conversations-listing">Conversations Listing</h1>
+          <h1 id="uploading-a-file-as-an-attachment">Uploading a file as an attachment</h1>
 
-<p>You can get all conversations for the authenticated user from:</p>
+<p>You can attach a file as an attachment to any Post. The file should be uploaded using <code>multipart/form-data Content-Type</code>.</p>
+
+<h2 id="on-conversation-creation">On conversation creation</h2>
+
+<p>If you want to upload a file while creating the conversation, you only need to provide the file using the param ````conversation[first_post_attachment_asset]```:</p>
 
 <pre>
-GET /api/v1/conversations
+POST /api/v1/conversations
 </pre>
 
-<p>The response will be a JSON array with all the conversations for the user, including an array of posts for each individual conversation.</p>
+<dl>
+	<dt>conversation[title]</dt>
+	<dd>Title for the message</dd>
+	<dt>conversation[first_post_body]</dt>
+	<dd>Body of the message to send</dd>
+	<dt>conversation[user_id]</dt>
+	<dd>id for the recipient User to start the conversation with</dd>
+
+	<dt>conversation[first_post_attachment_asset]</dt>
+	<dd>** encoded file **</dd>
+</dl>
+
+<p>The response will be the same JSON response as when creating a Conversation.</p>
 
 <p>Example request:</p>
 
 <pre class="console">
-curl -v -u 'user@example.com:sekret' https://qoolife.com/api/v1/conversations
+curl -u 'user@example.com:sekret' -F "conversation[title]=a title" -F "conversation[first_post_body]=Wow folks whats app" -F "conversation[user_id]=1" -F "conversation[first_post_attachment_asset]=@myfile" https://qoolife.com/api/v1/conversations
 </pre>
 
-<p>Response:</p>
+<h2 id="on-reply-new-post">On reply (new post)</h2>
 
-<pre>
-HTTP/1.1 200 OK
+<dl>
+	<dt>post[body]</dt>
+	<dd>Look at my pics :-P</dd>
 
-[
-  { "conversations":
-    {
-      "id":1,
-      "user_id":1,
-      "title":"Id autem",
-      "created_at":"2011-07-19T09:41:47+02:00",
-      "updated_at":"2011-11-30T16:48:24+01:00",
-			"type_human":"private message",
-			"status":"resolved",
-  		"watchers": [
-  			{
-  				"id":1,
-  			  "first_name":"Robb",
-  			  "last_name":"Murtin",
-	        "slug":"robb-murtin",
-	        "created_at":"2012-03-18T10:40:30+01:00",
-	        "updated_at":"2012-03-18T10:40:30+01:00"
-  			},
-  			{
-  				"id":2,
-  			  "first_name":"Mutt",
-  			  "last_name":"Robbin",
-	        "slug":"mutt-robbin",
-	        "created_at":"2012-03-18T10:40:30+01:00",
-	        "updated_at":"2012-03-18T10:40:30+01:00"
-  			}
-  		],
-      "posts": [
-        {
-  				"id":1,
-  				"user_id":1,
-          "conversation_id":1,
-          "body":"Lorem Ipsum",
-          "created_at":"2011-07-19T09:41:47+02:00",
-          "updated_at":"2011-11-30T16:48:24+01:00"
-        },
-        {
-  				"id":2,
-  				"user_id":2,
-          "conversation_id":1,
-          "body":"Mamet rosam",
-          "created_at":"2011-07-19T09:41:47+02:00",
-          "updated_at":"2011-11-30T16:48:24+01:00"
-        }
-      ]
-    }
-  }
-]
+	<dt>post[attachment_asset]</dt>
+	<dd>** encoded file **</dd>
+</dl>
+
+<p>The response will be the same JSON response as when creating a new Post.</p>
+
+<p>Example request:</p>
+
+<pre class="console">
+curl -u 'user@example.com:sekret' -F "post[body]=I say your message" -F "post[attachment_asset]=@myfile" https://qoolife.com/api/v1/conversations/1/posts
 </pre>
 
         </div><!--/span-->

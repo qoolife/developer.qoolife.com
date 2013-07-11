@@ -75,6 +75,7 @@
               <li><a href="/api/v1/conversations/">Listing conversations</a></li>
               <li><a href="/api/v1/conversations/create/">Starting a conversation</a></li>
               <li><a href="/api/v1/conversations/post/">Replying to a conversation</a></li>
+              <li><a href="/api/v1/conversations/post/">Uploading files as attachments</a></li>
 
               <li class="nav-header">Relationships</li>
               <li><a href="/api/v1/relationships/">Listing relationships</a></li>
@@ -83,7 +84,7 @@
         </div><!--/span-->
 
         <div class="span10">
-          <h1 id="conversations-creation">Conversations Creation</h1>
+          <h1 id="replying-to-a-conversation">Replying to a Conversation</h1>
 
 <p>You can reply to an existing conversation submitting its data to:</p>
 
@@ -118,6 +119,8 @@ HTTP/1.1 201 Created
       "date":"2012-10-05T15:35:00+02:00",
       "created_at":"2012-03-18T10:40:30+01:00",
       "updated_at":"2012-03-18T10:40:30+01:00",
+			"type_human":"private message",
+			"status":"resolved",
       "posts": [{
         "id": 1,
         "user_id": 1,

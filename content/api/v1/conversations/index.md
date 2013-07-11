@@ -37,12 +37,18 @@ HTTP/1.1 200 OK
   			{
   				"id":1,
   			  "first_name":"Robb",
-  			  "last_name":"Murtin"
+  			  "last_name":"Murtin",
+	        "slug":"robb-murtin",
+	        "created_at":"2012-03-18T10:40:30+01:00",
+	        "updated_at":"2012-03-18T10:40:30+01:00"
   			},
   			{
   				"id":2,
   			  "first_name":"Mutt",
-  			  "last_name":"Robbin"
+  			  "last_name":"Robbin",
+	        "slug":"mutt-robbin",
+	        "created_at":"2012-03-18T10:40:30+01:00",
+	        "updated_at":"2012-03-18T10:40:30+01:00"
   			}
   		],
       "posts": [

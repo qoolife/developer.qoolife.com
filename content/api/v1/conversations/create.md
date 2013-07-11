@@ -42,6 +42,8 @@ HTTP/1.1 201 Created
       "date":"2012-10-05T15:35:00+02:00",
       "created_at":"2012-03-18T10:40:30+01:00",
       "updated_at":"2012-03-18T10:40:30+01:00",
+			"type_human":"private message",
+			"status":"resolved",
       "posts": [{
         "id": 1,
         "user_id": 1,
