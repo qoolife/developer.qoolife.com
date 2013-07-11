@@ -77,6 +77,7 @@ HTTP/1.1 201 Created
     			"float_value":80.0,
     			"text_value":"80",
     			"variable_id":1,
+					"name":"Peso",
     			"created_at":"2013-04-19T13:32:42+02:00",
     			"updated_at":"2013-04-19T13:32:42+02:00"
     		}]
