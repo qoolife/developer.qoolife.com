@@ -9,7 +9,7 @@ You can attach a file as an attachment to any JournalEntry's Measurement of type
 If you want to upload a file while creating the conversation, you only need to provide the file as the ```measurement``` param:
 
 <pre class="console">
-curl -u 'user@example.com:sekret' -F "journal_entry[body]=a private entry for October 5th 15:35" -F "journal_entry[date]=2012-10-05T15:35" -F "journal_entry[measurements_attributes][0][variable_id]=100" -F "journal_entry[measurements_attributes][0][value]=@myfile" https://qoolife.com/api/v1/journal_entries
+curl -u 'user@example.com:sekret' -F "journal_entry[body]=a private entry for October 5th 15:35" -F "journal_entry[date]=2012-10-05T15:35" -F "journal_entry[measurements_attributes][0][variable_id]=658" -F "journal_entry[measurements_attributes][0][value]=@myfile" https://qoolife.com/api/v1/journal_entries
 </pre>
 
 Response:
@@ -35,7 +35,7 @@ HTTP/1.1 201 Created
     			"int_value":null,
     			"float_value":null,
     			"text_value":"null,
-    			"variable_id":100,
+    			"variable_id":658,
 					"name":"Archivo",
     			"created_at":"2013-04-19T13:32:42+02:00",
     			"updated_at":"2013-04-19T13:32:42+02:00"
@@ -44,4 +44,4 @@ HTTP/1.1 201 Created
 }
 </pre>
 
-Note that at the moment you need to know the variable_id in advance. Use 100 (File) for testing purposes.
+Note that at the moment you need to know the variable_id in advance. Use 685 (```Archivo```) for testing purposes.
