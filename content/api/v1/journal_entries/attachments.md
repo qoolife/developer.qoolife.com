@@ -6,7 +6,7 @@ title: Qoolife API V1 Journal Entry Attachments
 
 You can attach a file as an attachment to any JournalEntry's Measurement of type File. The file should be uploaded using ```multipart/form-data Content-Type```.
 
-If you want to upload a file while creating the conversation, you only need to provide the file as the ```measurement``` param:
+If you want to upload a file while creating the conversation, you only need to provide the file as the measurements's ```value``` param:
 
 <pre class="console">
 curl -u 'user@example.com:sekret' -F "journal_entry[body]=a private entry for October 5th 15:35" -F "journal_entry[date]=2012-10-05T15:35" -F "journal_entry[measurements_attributes][0][variable_id]=658" -F "journal_entry[measurements_attributes][0][value]=@myfile" https://qoolife.com/api/v1/journal_entries

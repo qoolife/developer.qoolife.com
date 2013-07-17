@@ -89,7 +89,7 @@
 
 <p>You can attach a file as an attachment to any JournalEntry’s Measurement of type File. The file should be uploaded using <code>multipart/form-data Content-Type</code>.</p>
 
-<p>If you want to upload a file while creating the conversation, you only need to provide the file as the <code>measurement</code> param:</p>
+<p>If you want to upload a file while creating the conversation, you only need to provide the file as the measurements’s <code>value</code> param:</p>
 
 <pre class="console">
 curl -u 'user@example.com:sekret' -F "journal_entry[body]=a private entry for October 5th 15:35" -F "journal_entry[date]=2012-10-05T15:35" -F "journal_entry[measurements_attributes][0][variable_id]=658" -F "journal_entry[measurements_attributes][0][value]=@myfile" https://qoolife.com/api/v1/journal_entries
