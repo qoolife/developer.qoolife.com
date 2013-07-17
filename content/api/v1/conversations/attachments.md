@@ -1,5 +1,5 @@
 ---
-title: Qoolife API V1 Conversations Posting (replying)
+title: Qoolife API V1 Post Attachments
 ---
 
 # Uploading a file as an attachment

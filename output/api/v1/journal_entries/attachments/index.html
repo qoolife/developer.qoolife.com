@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Qoolife API V1 Post Attachments</title>
+    <title>Qoolife API V1 Journal Entry Attachments</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -86,53 +86,47 @@
         <div class="span10">
           <h1 id="uploading-a-file-as-an-attachment">Uploading a file as an attachment</h1>
 
-<p>You can attach a file as an attachment to any Post. The file should be uploaded using <code>multipart/form-data Content-Type</code>.</p>
+<p>You can attach a file as an attachment to any JournalEntry’s Measurement of type File. The file should be uploaded using <code>multipart/form-data Content-Type</code>.</p>
 
-<h2 id="on-conversation-creation">On conversation creation</h2>
+<p>If you want to upload a file while creating the conversation, you only need to provide the file as the <code>measurement</code> param:</p>
 
-<p>If you want to upload a file while creating the conversation, you only need to provide the file using the param ````conversation[first_post_attachment_asset]```:</p>
+<pre class="console">
+curl -u 'user@example.com:sekret' -F "journal_entry[body]=a private entry for October 5th 15:35" -F "journal_entry[date]=2012-10-05T15:35" -F "journal_entry[measurements_attributes][0][variable_id]=1" -F "journal_entry[measurements_attributes][0][value]=@myfile" https://qoolife.com/api/v1/journal_entries
+</pre>
+
+<p>Response:</p>
 
 <pre>
-POST /api/v1/conversations
+HTTP/1.1 201 Created
+
+{
+  "journal_entry":
+    {
+      "id":609,
+      "user_id":1,
+      "author_id":1,
+      "body":"a private entry for October 5th 15:35",
+      "date":"2012-10-05T15:35:00+02:00",
+      "created_at":"2012-03-18T10:40:30+01:00",
+      "updated_at":"2012-03-18T10:40:30+01:00",
+      "measurements":
+    		[{
+    			"id":8305,
+    			"journal_entry_id":609,
+    			"user_id":1,
+    			"int_value":null,
+    			"float_value":null,
+    			"text_value":"null,
+    			"variable_id":100,
+					"name":"Archivo",
+    			"created_at":"2013-04-19T13:32:42+02:00",
+    			"updated_at":"2013-04-19T13:32:42+02:00"
+    		}]
+    }
+}
 </pre>
 
-<dl>
-	<dt>conversation[title]</dt>
-	<dd>Title for the message</dd>
-	<dt>conversation[first_post_body]</dt>
-	<dd>Body of the message to send</dd>
-	<dt>conversation[user_id]</dt>
-	<dd>id for the recipient User to start the conversation with</dd>
-
-	<dt>conversation[first_post_attachment_asset]</dt>
-	<dd>** encoded file **</dd>
-</dl>
-
-<p>The response will be the same JSON response as when creating a Conversation.</p>
-
-<p>Example request:</p>
-
-<pre class="console">
-curl -u 'user@example.com:sekret' -F "conversation[title]=a title" -F "conversation[first_post_body]=Wow folks whats app" -F "conversation[user_id]=1" -F "conversation[first_post_attachment_asset]=@myfile" https://qoolife.com/api/v1/conversations
-</pre>
-
-<h2 id="on-reply-new-post">On reply (new post)</h2>
-
-<dl>
-	<dt>post[body]</dt>
-	<dd>Look at my pics :-P</dd>
-
-	<dt>post[attachment_asset]</dt>
-	<dd>** encoded file **</dd>
-</dl>
-
-<p>The response will be the same JSON response as when creating a new Post.</p>
-
-<p>Example request:</p>
-
-<pre class="console">
-curl -u 'user@example.com:sekret' -F "post[body]=I say your message" -F "post[attachment_asset]=@myfile" https://qoolife.com/api/v1/conversations/1/posts
-</pre>
+<p>Note that at the moment you need to know the variable_id in advance. Use 100 (File) for testing purposes.</p>
 
         </div><!--/span-->
       </div><!--/row-->
