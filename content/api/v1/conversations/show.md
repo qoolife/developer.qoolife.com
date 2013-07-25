@@ -7,7 +7,7 @@ title: Qoolife API V1 Showing a Conversation
 You can get show a particular conversation for the authenticated user using:
 
 <pre>
-GET /api/v1/conversation/1
+GET /api/v1/conversations/1
 </pre>
 
 The response will be a JSON response containing the conversation and including an array of posts for each individual conversation and an array of conversation watchers.
@@ -17,7 +17,7 @@ The conversation will be automatically marked as viewed by the logged user when 
 Example request:
 
 <pre class="console">
-curl -v -u 'user@example.com:sekret' https://qoolife.com/api/v1/conversation/1
+curl -v -u 'user@example.com:sekret' https://qoolife.com/api/v1/conversations/1
 </pre>
 
 Response:
