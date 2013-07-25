@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Qoolife API V1 Users Login</title>
+    <title>Qoolife API V1 Showing a Conversation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -86,18 +86,22 @@
         </div><!--/span-->
 
         <div class="span10">
-          <h1 id="user-info">User info</h1>
+          <h1 id="show-a-conversation">Show a Conversation</h1>
 
-<p>You can get all info for the authenticated user from</p>
+<p>You can get show a particular conversation for the authenticated user using:</p>
 
 <pre>
-GET /api/v1/users/login
+GET /api/v1/conversation/1
 </pre>
+
+<p>The response will be a JSON response containing the conversation and including an array of posts for each individual conversation and an array of conversation watchers.</p>
+
+<p>The conversation will be automatically marked as viewed by the logged user when shown.</p>
 
 <p>Example request:</p>
 
 <pre class="console">
-curl -v -u 'user@example.com:sekret' https://qoolife.com/api/v1/users/login
+curl -v -u 'user@example.com:sekret' https://qoolife.com/api/v1/conversation/1
 </pre>
 
 <p>Response:</p>
@@ -106,10 +110,41 @@ curl -v -u 'user@example.com:sekret' https://qoolife.com/api/v1/users/login
 HTTP/1.1 200 OK
 
 {
-  "id":1,
-  "email":"user@example.com",
-  "first_name":"First Name",
-  "last_name":"Last Name"
+  "conversation":
+    {
+      "id":1,
+      "user_id":2,
+      "title":"a title",
+      "date":"2012-10-05T15:35:00+02:00",
+      "created_at":"2012-03-18T10:40:30+01:00",
+      "updated_at":"2012-03-18T10:40:30+01:00",
+			"type_human":"private message",
+			"status":"resolved",
+			"new":"false",
+			"last_viewed_at":"2013-01-18T10:40:30+01:00",
+      "posts": [{
+        "id": 1,
+        "user_id": 1,
+        "conversation_id": 1,
+        "body": "Wow folks whats app",
+        "created_at":"2012-03-18T10:40:30+01:00",
+        "updated_at":"2012-03-18T10:40:30+01:00"
+      }]
+      "watchers": [{
+        "id": 1,
+        "name": Pancho,
+        "slug": pancho,
+        "created_at":"2012-03-18T10:40:30+01:00",
+        "updated_at":"2012-03-18T10:40:30+01:00"
+      },
+      {
+        "id": 2,
+        "name": Pincho,
+        "slug": pincho,
+        "created_at":"2012-03-18T10:40:30+01:00",
+        "updated_at":"2012-03-18T10:40:30+01:00"
+      }]
+    }
 }
 </pre>
 

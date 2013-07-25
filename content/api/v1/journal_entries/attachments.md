@@ -36,6 +36,7 @@ HTTP/1.1 201 Created
     			"float_value":null,
     			"text_value":"null,
     			"variable_id":658,
+    			"variable_type":"float",
 					"name":"Archivo",
     			"created_at":"2013-04-19T13:32:42+02:00",
     			"updated_at":"2013-04-19T13:32:42+02:00"

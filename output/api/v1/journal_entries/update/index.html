@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Qoolife API V1 Users Login</title>
+    <title>Qoolife API V1 Journal Entries Update</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -86,32 +86,71 @@
         </div><!--/span-->
 
         <div class="span10">
-          <h1 id="user-info">User info</h1>
+          <h1 id="updating-journal-entries">Updating Journal Entries</h1>
 
-<p>You can get all info for the authenticated user from</p>
+<p>You can update a present journal entry that the authenticated user is able to update (own or permissions granted by the journal owner). For this you can use this API call:</p>
 
 <pre>
-GET /api/v1/users/login
+PUT /api/v1/journal_entry/609
 </pre>
 
-<p>Example request:</p>
+<dl>
+	<dt>journal_entry[id]</dt>
+	<dd>entry's ID to be updated</dd>
+	<dt>journal_entry[body]</dt>
+	<dd>New text for the entry body</dd>
+	<dt>journal_entry[date]</dt>
+	<dd>Date for the entry can be updated</dd>
+	<dt>journal_entry[measurements_attributes]</dt>
+	<dd>Array containing the measurement attributes. Identify different measurements by *id*</dd>
+	<dl>
+  	<dt>journal_entry[measurements_attributes][1][value]</dt>
+  	<dd>Value of the measurement to update</dd>
+	</dl>
+</dl>
+
+<p>Notes: the measurement’s variable_id cannot be updated.</p>
+
+<p>You can update journal entries and measurements using this API call:</p>
 
 <pre class="console">
-curl -v -u 'user@example.com:sekret' https://qoolife.com/api/v1/users/login
+curl -u 'user@example.com:sekret' -X PUT -d "journal_entry[id]=609;journal_entry[body]=this is my new comments;journal_entry[date]=2010-10-05T15:35;journal_entry[measurements_attributes][10][value]=120;" http://localhost:3000/api/v1/journal_entry/609
 </pre>
 
 <p>Response:</p>
 
 <pre>
-HTTP/1.1 200 OK
+HTTP/1.1 200 Accepted
 
 {
-  "id":1,
-  "email":"user@example.com",
-  "first_name":"First Name",
-  "last_name":"Last Name"
+  "journal_entry":
+    {
+      "id":609,
+      "user_id":1,
+      "author_id":1,
+      "body":"this is my new comments",
+      "date":"2010-10-05T15:35:00+02:00",
+      "created_at":"2012-03-18T10:40:30+01:00",
+      "updated_at":"2013-03-18T10:40:30+01:00",
+      "measurements":
+    		[{
+    			"id":8305,
+    			"journal_entry_id":609,
+    			"user_id":1,
+    			"int_value":null,
+    			"float_value":120.0,
+    			"text_value":"120",
+    			"variable_id":1,
+    			"variable_type":"float",
+					"name":"Peso",
+    			"created_at":"2013-04-19T13:32:42+02:00",
+    			"updated_at":"2013-04-19T13:32:42+02:00"
+    		}]
+    }
 }
 </pre>
+
+<p>Note that at the moment you need to know the variable_id in advance. Use 1 (Weight) for testing purposes.</p>
 
         </div><!--/span-->
       </div><!--/row-->

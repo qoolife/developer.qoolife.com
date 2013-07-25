@@ -15,8 +15,6 @@ POST /api/v1/journal_entries
 	<dd>Text for the entry body</dd>
 	<dt>journal_entry[date]</dt>
 	<dd>Date for the entry</dd>
-	<dt>journal_entry[private]</dt>
-	<dd>Boolean value to indicate if the entry will be marked as private. Can be 1 (true) or 0 (false). By default, it's false so you only need to include this param if you want to set it to true.</dd>
 </dl>
 
 Example request:
@@ -77,6 +75,7 @@ HTTP/1.1 201 Created
     			"float_value":80.0,
     			"text_value":"80",
     			"variable_id":1,
+    			"variable_type":"float",
 					"name":"Peso",
     			"created_at":"2013-04-19T13:32:42+02:00",
     			"updated_at":"2013-04-19T13:32:42+02:00"
@@ -85,5 +84,7 @@ HTTP/1.1 201 Created
 }
 </pre>
 
-Note that at the moment you need to know the variable_id in advance. Use 1 (Weight) for testing purposes.
+Notes:
 
+* That at the moment you need to know the variable_id in advance. Use 1 (Weight) for testing purposes.
+* Variable_type can take the following values: 'float', 'boolean', 'text', 'likert', 'file'.
