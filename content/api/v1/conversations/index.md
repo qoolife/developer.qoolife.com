@@ -33,6 +33,8 @@ HTTP/1.1 200 OK
       "updated_at":"2011-11-30T16:48:24+01:00",
 			"type_human":"private message",
 			"status":"resolved",
+			"new":"false",
+			"last_viewed_at":"2011-11-30T16:48:24+01:00",
   		"watchers": [
   			{
   				"id":1,
