@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Qoolife API V1 Journal Entries Update</title>
+    <title>Qoolife API V1 Pagination</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -88,83 +88,50 @@
         </div><!--/span-->
 
         <div class="span10">
-          <h1 id="updating-journal-entries">Updating Journal Entries</h1>
+          <h1 id="pagination">Pagination</h1>
 
-<p>You can update a present journal entry that the authenticated user is able to update (own or permissions granted by the journal owner). For this you can use this API call:</p>
-
-<pre>
-PUT /api/v1/journal_entries/609
-</pre>
-
-<dl>
-	<dt>journal_entry[id]</dt>
-	<dd>entry's ID to be updated</dd>
-	<dt>journal_entry[body]</dt>
-	<dd>New text for the entry body</dd>
-	<dt>journal_entry[date]</dt>
-	<dd>Date for the entry can be updated</dd>
-	<dt>journal_entry[measurements_attributes]</dt>
-	<dd>Array containing the measurement attributes.</dd>
-	<dl>
-  	<dt>journal_entry[measurements_attributes][0][id]</dt>
-  	<dd>Id of the measurement to update</dd>
-  	<dt>journal_entry[measurements_attributes][0][value]</dt>
-  	<dd>Value of the measurement to update</dd>
-  	<dt>journal_entry[measurements_attributes][0][variable_id]</dt>
-  	<dd>Value of the measurement</dd>
-  	...
-  	<dt>journal_entry[measurements_attributes][1][id]</dt>
-  	<dd>Id of the second measurement</dd>
-	</dl>
-</dl>
-
-<p>Notes:</p>
-
-<ul>
-  <li>Measurement’s <em>id</em> and <em>variable_id</em> cannot be updated but are mandatory.</li>
-  <li>Every Measurement already in the Journal Entry must be provided, regardless if updated or not. Any Measurement not listed will be deleted (<strong>important</strong>).</li>
-</ul>
-
-<p>You can update journal entries and measurements using this API call:</p>
+<p>Requests that return multiple items will be paginated to 20 items by default. You can specify further pages with the ?page parameter.</p>
 
 <pre class="console">
-curl -u 'user@example.com:sekret' -X PUT -d "journal_entry[id]=609;journal_entry[body]=this is my new comments;journal_entry[date]=2010-10-05T15:35;ournal_entry[measurements_attributes][0][id]=11122;journal_entry[measurements_attributes][0][value]=120;journal_entry[measurements_attributes][0][variable_id]=1;" http://localhost:3000/api/v1/journal_entries/609
+  curl https://qoolife.com/api/v1/journal_entries?page=2
 </pre>
 
-<p>Response:</p>
+<p>Note that page numbering is 1-based and that ommiting the ?page parameter will return the first page.</p>
 
-<pre>
-HTTP/1.1 200 OK
+<h2 id="link-header">Link Header</h2>
 
-{
-  "journal_entry":
-    {
-      "id":609,
-      "user_id":1,
-      "author_id":1,
-      "body":"this is my new comments",
-      "date":"2010-10-05T15:35:00+02:00",
-      "created_at":"2012-03-18T10:40:30+01:00",
-      "updated_at":"2013-03-18T10:40:30+01:00",
-      "measurements":
-    		[{
-    			"id":11122,
-    			"journal_entry_id":609,
-    			"user_id":1,
-    			"int_value":null,
-    			"float_value":120.0,
-    			"text_value":"120",
-    			"variable_id":1,
-    			"variable_type":"float",
-					"name":"Peso",
-    			"created_at":"2013-04-19T13:32:42+02:00",
-    			"updated_at":"2013-04-19T13:32:42+02:00"
-    		}]
-    }
-}
-</pre>
+<p>The pagination info is included in the Link header. It is important to follow these Link header values instead of constructing your own URLs.</p>
 
-<p>Note that at the moment you need to know the variable_id in advance. Use 1 (Weight) for testing purposes.</p>
+<p>Link: <a href="https://qoolife.com/api/v1/journal_entries?page=3">https://qoolife.com/api/v1/journal_entries?page=3</a>; rel=”next”, <a href="https://qoolife.com/api/v1/journal_entries?page=100">https://qoolife.com/api/v1/journal_entries?page=100</a>; rel=”last”</p>
+
+<p>The possible rel values are:</p>
+
+<dl>
+  <dt>
+    next
+  </dt>
+  <dd>
+    Shows the URL of the immediate next page of results.
+  </dd>
+  <dt>
+    last
+  </dt>
+  <dd>
+    Shows the URL of the last page of results.
+  </dd>
+  <dt>
+    first
+  </dt>
+  <dd>
+    Shows the URL of the first page of results.
+  </dd>
+  <dt>
+    prev
+  </dt>
+  <dd>
+    Shows the URL of the immediate previous page of results.
+  </dd>
+</dl>
 
         </div><!--/span-->
       </div><!--/row-->
