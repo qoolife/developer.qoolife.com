@@ -20,7 +20,7 @@ The pagination info is included in the Link header. It is important to follow th
 	Link: <https://qoolife.com/api/v1/journal_entries?page=3>; rel="next", <https://qoolife.com/api/v1/journal_entries?page=100>; rel="last"
 </pre>
 
-The possible rel values are:
+The possible *rel* values are:
 
 <dl>
   <dt>
