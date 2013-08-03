@@ -16,7 +16,9 @@ Note that page numbering is 1-based and that ommiting the ?page parameter will r
 
 The pagination info is included in the Link header. It is important to follow these Link header values instead of constructing your own URLs.
 
-Link: <https://qoolife.com/api/v1/journal_entries?page=3>; rel="next", <https://qoolife.com/api/v1/journal_entries?page=100>; rel="last"
+<pre class="console">
+	Link: <https://qoolife.com/api/v1/journal_entries?page=3>; rel="next", <https://qoolife.com/api/v1/journal_entries?page=100>; rel="last"
+</pre>
 
 The possible rel values are:
 
