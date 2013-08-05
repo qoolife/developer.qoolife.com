@@ -44,7 +44,7 @@ HTTP/1.1 201 Created
       "updated_at":"2012-03-18T10:40:30+01:00",
 			"type_human":"private message",
 			"status":"resolved",
-			"new":"false",
+			"unread":"false",
 			"last_viewed_at":"2012-03-18T10:40:30+01:00",
       "posts": [{
         "id": 1,
