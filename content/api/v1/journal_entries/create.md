@@ -43,48 +43,8 @@ HTTP/1.1 201 Created
 }
 </pre>
 
-## Measurements
+# Measurements and Questionnaires
 
-You can add measurements to the journal entry by nesting the measurement attributes like this:
+You can add measurements to the journal entry, according to variables the user chooses to track, or to variable sets (Questionnaires) the user is assigned to fill in.
 
-<pre class="console">
-curl -u 'user@example.com:sekret' -X POST -d "journal_entry[body]=a private entry for October 5th 15:35;journal_entry[date]=2012-10-05T15:35;journal_entry[measurements_attributes][0][value]=80;journal_entry[measurements_attributes][0][variable_id]=1;" http://localhost:3000/api/v1/journal_entries
-</pre>
-
-Response:
-
-<pre>
-HTTP/1.1 201 Created
-
-{
-  "journal_entry":
-    {
-      "id":609,
-      "user_id":1,
-      "author_id":1,
-      "body":"a private entry for October 5th 15:35",
-      "date":"2012-10-05T15:35:00+02:00",
-      "created_at":"2012-03-18T10:40:30+01:00",
-      "updated_at":"2012-03-18T10:40:30+01:00",
-      "measurements":
-    		[{
-    			"id":8305,
-    			"journal_entry_id":609,
-    			"user_id":1,
-    			"int_value":null,
-    			"float_value":80.0,
-    			"text_value":"80",
-    			"variable_id":1,
-    			"variable_type":"float",
-					"name":"Peso",
-    			"created_at":"2013-04-19T13:32:42+02:00",
-    			"updated_at":"2013-04-19T13:32:42+02:00"
-    		}]
-    }
-}
-</pre>
-
-Notes:
-
-* That at the moment you need to know the variable_id in advance. Use 1 (Weight) for testing purposes.
-* Variable_type can take the following values: 'float', 'boolean', 'text', 'likert', 'file'.
+See more about this in the (Measurements section)[/journal_entries/measurements] and (Questionnaires section)[/journal_entries/measurements#questionnaires]
