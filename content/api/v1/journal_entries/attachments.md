@@ -8,41 +8,37 @@ You can attach a file as an attachment to any JournalEntry's Measurement of type
 
 If you want to upload a file while creating the conversation, you only need to provide the file as the measurements's ```value``` param:
 
-<pre class="console">
-curl -u 'user@example.com:sekret' -F "journal_entry[body]=a private entry for October 5th 15:35" -F "journal_entry[date]=2012-10-05T15:35" -F "journal_entry[measurements_attributes][0][variable_id]=658" -F "journal_entry[measurements_attributes][0][value]=@myfile" https://qoolife.com/api/v1/journal_entries
-</pre>
+    curl -u 'user@example.com:sekret' -F "journal_entry[body]=a private entry for October 5th 15:35" -F "journal_entry[date]=2012-10-05T15:35" -F "journal_entry[measurements_attributes][0][variable_id]=658" -F "journal_entry[measurements_attributes][0][value]=@myfile" https://qoolife.com/api/v1/journal_entries
 
 Response:
 
-<pre>
-HTTP/1.1 201 Created
+    HTTP/1.1 201 Created
 
-{
-  "journal_entry":
     {
-      "id":609,
-      "user_id":1,
-      "author_id":1,
-      "body":"a private entry for October 5th 15:35",
-      "date":"2012-10-05T15:35:00+02:00",
-      "created_at":"2012-03-18T10:40:30+01:00",
-      "updated_at":"2012-03-18T10:40:30+01:00",
-      "measurements":
-    		[{
-    			"id":8305,
-    			"journal_entry_id":609,
-    			"user_id":1,
-    			"int_value":null,
-    			"float_value":null,
-    			"text_value":"null,
-    			"variable_id":658,
-    			"variable_type":"float",
-					"name":"Archivo",
-    			"created_at":"2013-04-19T13:32:42+02:00",
-    			"updated_at":"2013-04-19T13:32:42+02:00"
-    		}]
+      "journal_entry":
+        {
+          "id":609,
+          "user_id":1,
+          "author_id":1,
+          "body":"a private entry for October 5th 15:35",
+          "date":"2012-10-05T15:35:00+02:00",
+          "created_at":"2012-03-18T10:40:30+01:00",
+          "updated_at":"2012-03-18T10:40:30+01:00",
+          "measurements":
+            [{
+              "id":8305,
+              "journal_entry_id":609,
+              "user_id":1,
+              "int_value":null,
+              "float_value":null,
+              "text_value":"null,
+              "variable_id":658,
+              "variable_type":"float",
+              "name":"Archivo",
+              "created_at":"2013-04-19T13:32:42+02:00",
+              "updated_at":"2013-04-19T13:32:42+02:00"
+            }]
+        }
     }
-}
-</pre>
 
 Note that at the moment you need to know the variable_id in advance. Use 685 (```Archivo```) for testing purposes.

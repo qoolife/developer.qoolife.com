@@ -1,0 +1,139 @@
+//@import "compass/typography/lists/horizontal-list";
+//@import "compass/utilities/general/min";
+//@import "compass/css3/inline-block";
+//@import "compass/css3/images";
+//@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+//@import "compass/css3/shared";
+//@import "compass/css3/border-radius";
+//@import "compass/css3/opacity";
+//@import "compass/css3/box-sizing";
+//@import "compass/support";
+
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+p, ol, ul {
+  font-size: 14px;
+  margin-bottom: 1.5em;
+}
+
+h1 {
+  margin-bottom: 1em;
+  font-size: 36px;
+}
+
+h2, h3 {
+  margin-bottom: 0.5em;
+}
+
+dl {
+  margin-left: 9px;
+  border-left: 2px dotted #CCC;
+  padding-left: 1em;
+
+  dt {
+    margin: 1em 0;
+  }
+
+  dd {
+    margin-left: 18px;
+  }
+}
+
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+  background-image: (url('/images/project_papper.png'));
+}
+
+.navbar {
+  .brand {
+    span {
+      vertical-align: bottom;
+      padding-bottom: 2px;
+      font-size: 21px;
+      display: inline-block;
+      font-weight: bold;
+      margin-left: 0.5em;
+    }
+
+    span.api {
+      @include single-text-shadow(#bada55, 3px, 0px, 28px);
+      margin-left: 0;
+    }
+  }
+
+  .vanity {
+    padding: 18px 0 0 0;
+    display: inline-block;
+  }
+}
+
+.main {
+  margin-top: 2em;
+}
+
+.sidebar-nav {
+  padding: 1em 0;
+  @include background-opacity(#FFF, 0.66);
+
+  .nav-header {
+    font-size: 14px;
+    color: #444;
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+    border-bottom: 1px dashed #E0E0E0;
+  }
+}
+
+.main-content {
+  padding: 1em 2em 2em 2em;
+  @include background-opacity(#FFF, 0.66);
+}
+
+footer.well {
+  @include background-opacity(#FFF, 0.66);
+  text-align: center;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      font-size: 20px;
+      @include single-text-shadow(#ddd, 2px, 2px, 2px);
+      line-height: 25px;
+    }
+  }
+
+  .copy {
+    color: #333;
+  }
+}
+
+pre {
+  margin-bottom: 2em;
+  padding: 4px;
+
+  code {
+    font-weight: bold;
+    background-color: #222;
+    color: #bada55;
+    padding: 1.33em 2em 0 1em;
+    display: block;
+  }
+}
+
+.gargantuan {
+  padding: 70px 0 80px;
+
+  h1 {
+    font-size: 5em;
+  }
+}
+
+.center {
+  text-align: center;
+}

@@ -1,7 +1,6 @@
 require 'digest/sha1'
 
 module Nanoc3::DataSources
-
   class Static < Nanoc3::DataSource
 
     identifier :static
@@ -49,7 +48,5 @@ module Nanoc3::DataSources
         digest.hexdigest
       end.join('-')
     end
-
   end
-
 end

@@ -13,19 +13,60 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
-compile '/static/*' do
+require 'compass'
+Compass.add_project_configuration 'compass.rb'
+
+compile '/static/*/' do
+end
+
+compile '/assets/stylesheets/*' do
+  ext = item[:extension].split('.').last
+
+  if ext == 'scss'
+    filter :sass, Compass.sass_engine_options.merge(syntax: ext.to_sym)
+  else
+    filter :erb
+  end
+
+  filter :rainpress
+end
+
+compile '/assets/javascripts/*' do
+  filter :erb
+  filter :uglify_js
 end
 
 compile '*' do
-  filter :erb
-  filter :kramdown
-  filter :colorize_syntax,
-    :colorizers => {:javascript => :pygmentize}
+  # item[:extension] returns 'html.erb' for multi-dotted filename
+  ext = item[:extension].nil? ? nil : item[:extension].split('.').last
+
+  if ext == 'erb'
+    filter :erb
+  elsif ext == 'haml' || ext.nil?
+    raise 'hey'
+    filter :haml
+  elsif ext == 'md'
+    filter :erb
+    filter :kramdown
+  elsif ext == 'html'
+  else
+    raise "Filter is not configured for #{item.identifier} in Rules file."
+  end
+
   layout 'default'
 end
 
+
 route '/static/*' do
   item.identifier[7..-2]
+end
+
+route '/assets/stylesheets/*/' do
+  item.identifier.chop + '.css'
+end
+
+route '/assets/javascripts/*/' do
+  item.identifier.chop + '.js'
 end
 
 route '*' do
@@ -38,5 +79,5 @@ route '*' do
   end
 end
 
-layout '*', :erb
+layout '*', :haml
 

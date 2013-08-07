@@ -18,9 +18,7 @@ If you do authenticate, it will return:
 
 Example request:
 
-<pre class="console">
-curl -u 'user@example.com' https://qoolife.com/api/v1/hello
-</pre>
+    curl -u 'user@example.com' https://qoolife.com/api/v1/hello
 
 Response:
 
