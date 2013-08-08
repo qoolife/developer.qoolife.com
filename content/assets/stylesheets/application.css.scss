@@ -61,7 +61,7 @@ body {
     }
 
     span.api {
-      @include single-text-shadow(#bada55, 3px, 0px, 28px);
+      @include single-text-shadow(#bada55, 0px, 0px, 50px);
       margin-left: 0;
     }
   }
@@ -127,10 +127,30 @@ pre {
 }
 
 .gargantuan {
-  padding: 70px 0 80px;
+  background-image: url("/images/gplaypattern.png");
+  border: 16px solid #fff;
+  box-shadow: 3px 2px 9px #eee;
+  margin-top: 1em;
 
   h1 {
-    font-size: 5em;
+    font-size: 7em;
+
+    small {
+      font-size: 0.66em;
+      font-weight: bold;
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 343px;
+    left: 210px;
+    width: 156px;
+    z-index: 3;
   }
 }
 

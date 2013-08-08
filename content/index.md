@@ -3,29 +3,26 @@ title: Qoolife Developer
 ---
 <div class="hero-unit gargantuan">
   <h1 style="margin-bottom:5px;">Qoolife
-    <small>Developer</small>
+    <small>Developers</small>
   </h1>
 
-  <p>Your one stop place for all Qoolife platform documentation.</p>
+  <p>
+    Your one stop place for Qoolife's API documentation.
+  </p>
+
+  <p>
+    Connect your amazing app to Qoolife's API v1 and start accessing and storing your user's personal health information.
+    Connect your Personal Health Device to our platform and extend its capabilities on the cloud.
+    Consume it, process it, filter it and present it to your users in ways only you can imagine.
+    Information is beautiful.
+  </p>
+
+  <p>
+    Steady ... Ready ...
+    <strong>
+      Go !
+    </strong>
+  </p>
+
+  <img src="/images/arrow.png" alt="" class="arrow" />
 </div>
-
-<div class="container">
-  <h1 style="margin-bottom:5px;">Qoolife Developer Portal</h1>
-  <div class="row-fluid">
-    <div class="span4">
-      <img src="">
-      <h2></h2>
-      <p></p>
-    </div>
-
-    <div class="span4">
-      <h2></h2>
-    </div>
-
-    <div class="span4">
-      <h2></h2>
-    </div>
-  </div>
-</div>
-
-
