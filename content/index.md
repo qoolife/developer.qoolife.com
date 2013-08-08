@@ -18,7 +18,7 @@ title: Qoolife Developer
   </p>
 
   <p>
-    Steady ... Ready ...
+    Ready ... Steady ...
     <strong>
       Go !
     </strong>
