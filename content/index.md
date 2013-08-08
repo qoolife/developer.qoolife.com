@@ -13,7 +13,7 @@ title: Qoolife Developer
   <p>
     Connect your amazing app to Qoolife's API v1 and start accessing and storing your user's personal health information.
     Connect your Personal Health Device to our platform and extend its capabilities on the cloud.
-    Consume it, process it, filter it and present it to your users in ways only you can imagine.
+    Produce and consume health data, process it, filter it and present it to your users in ways only you can imagine.
     Information is beautiful.
   </p>
 
