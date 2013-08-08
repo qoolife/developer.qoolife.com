@@ -32,8 +32,8 @@ You can update a present journal entry that the authenticated user is able to up
 
 Notes:
 
-* Measurement's *id* and *variable_id* cannot be updated but are mandatory.
-* Every Measurement already in the Journal Entry must be provided, regardless if updated or not. Any Measurement not listed will be deleted (**important**).
+* Measurement's ``id`` and ``variable_id`` cannot be updated but are mandatory.
+* Every Measurement already in the JournalEntry must be provided, regardless if updated or not. Any ``Measurement`` not listed will be deleted (**important**).
 
 You can update journal entries and measurements using this API call:
 
@@ -71,4 +71,4 @@ Response:
         }
     }
 
-Note that at the moment you need to know the variable_id in advance. Use 1 (Weight) for testing purposes.
+Note that at the moment you need to know the ``variable_id`` in advance. Use 1 (Weight) for testing purposes.

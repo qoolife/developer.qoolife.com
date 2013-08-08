@@ -8,7 +8,7 @@ You can attach a file as an attachment to any Post. The file should be uploaded 
 
 ## On conversation creation
 
-If you want to upload a file while creating the conversation, you only need to provide the file using the param ````conversation[first_post_attachment_asset]```:
+If you want to upload a file while creating the conversation, you only need to provide the file using the param ``conversation[first_post_attachment_asset]``:
 
     POST /api/v1/conversations
 
