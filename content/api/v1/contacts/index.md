@@ -46,7 +46,7 @@ Response:
          'updated_at':'2012-03-18T10:40:30+01:00'
          'relationship_type':'friend',
          'conversation_type':'private_message',
-         'conversation_service_id':10
+         'conversation_service_id':nil
        }
       ]
     }
