@@ -28,7 +28,7 @@ The response will be the same JSON response as when creating a Conversation.
 
 Example request:
 
-    curl -u 'user@example.com:sekret' -F "conversation[title]=a title" -F "conversation[first_post_body]=Wow folks whats app" -F "conversation[user_id]=1" -F "conversation[first_post_attachment_asset]=@myfile" https://qoolife.com/api/v1/conversations
+    curl -u 'user@example.com:sekret' -F 'conversation[title]=a title' -F 'conversation[first_post_body]=Wow folks whats app' -F 'conversation[user_id]=1' -F 'conversation[first_post_attachment_asset]=@myfile' https://qoolife.com/api/v1/conversations
 
 ## On reply (new post)
 
@@ -44,4 +44,4 @@ The response will be the same JSON response as when creating a new Post.
 
 Example request:
 
-    curl -u 'user@example.com:sekret' -F "post[body]=I say your message" -F "post[attachment_asset]=@myfile" https://qoolife.com/api/v1/conversations/1/posts
+    curl -u 'user@example.com:sekret' -F 'post[body]=I say your message' -F 'post[attachment_asset]=@myfile' https://qoolife.com/api/v1/conversations/1/posts

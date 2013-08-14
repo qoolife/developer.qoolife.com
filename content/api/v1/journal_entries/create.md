@@ -25,23 +25,23 @@ You can create a new journal entry for the authenticated user submitting its dat
 
 Example request:
 
-    curl -u 'user@example.com:sekret' -X POST -d "journal_entry[body]=a private entry for October 5th 15:35;journal_entry[date]=2012-10-05T15:35;journal_entry[private]=1" https://qoolife.com/api/v1/journal_entries
+    curl -u 'user@example.com:sekret' -X POST -d 'journal_entry[body]=a private entry for October 5th 15:35;journal_entry[date]=2012-10-05T15:35;journal_entry[private]=1' https://qoolife.com/api/v1/journal_entries
 
 Response:
 
     HTTP/1.1 201 Created
 
     {
-      "journal_entry":
+      'journal_entry':
         {
-          "id":609,
-          "user_id":1,
-          "author_id":1,
-          "body":"a private entry for October 5th 15:35",
-          "date":"2012-10-05T15:35:00+02:00",
-          "created_at":"2012-03-18T10:40:30+01:00",
-          "updated_at":"2012-03-18T10:40:30+01:00",
-          "measurements": []
+          'id':609,
+          'user_id':1,
+          'author_id':1,
+          'body':'a private entry for October 5th 15:35',
+          'date':'2012-10-05T15:35:00+02:00',
+          'created_at':'2012-03-18T10:40:30+01:00',
+          'updated_at':'2012-03-18T10:40:30+01:00',
+          'measurements': []
         }
     }
 
