@@ -42,7 +42,7 @@ Response:
 Notes:
 
 * That at the moment you need to know the variable_id in advance. Use 1 (Weight) for testing purposes.
-* ``Variable_type`` can take the following values: ``float``, ``boolean``, ``text``, ``likert``, ``file``. See (tracked variables section)[#tracked_variables] for more details on this.
+* ``Variable_type`` can take the following values: ``float``, ``boolean``, ``text``, ``likert``, ``file`` and ```date```. See (tracked variables section)[#tracked_variables] for more details on this.
 
 # ¿Which variables to measure?
 
@@ -97,6 +97,14 @@ Response:
           'options':null,
           'description':null
         },
+        {
+          'id':5,
+          'name':'Date of last menstrual period',
+          'variable_type':'date',
+          'unit':null,
+          'options':null,
+          'description':null
+        }
       ]
     }
 
