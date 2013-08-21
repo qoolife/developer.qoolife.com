@@ -15,14 +15,15 @@ You can create a conversation entry within the authenticated user and the recipi
   <dd>Body of the message to send</dd>
   <dt>conversation[user_id]</dt>
   <dd>id for the recipient User to start the conversation with</dd>
+  <dt>conversation[type_human]</dt>
+  <dd>Type of conversation. Either ``personal_message``, ``consultation`` or ``group_message``.</dd>
 </dl>
 
 The response will be a JSON response containing the conversation and including an array of posts for each individual conversation and an array of conversation watchers.
 
-
 Example request:
 
-    curl -u 'user@example.com:sekret' -X POST -d 'conversation[title]=a title;conversation[first_post_body]=Wow folks whats app;conversation[user_id]=2' https://qoolife.com/api/v1/conversations
+    curl -u 'user@example.com:sekret' -X POST -d 'conversation[title]=a title;conversation[first_post_body]=Wow folks whats app;conversation[user_id]=2;conversation[type_human]=private_message' https://qoolife.com/api/v1/conversations
 
 Response:
 
@@ -37,7 +38,7 @@ Response:
           'date':'2012-10-05T15:35:00+02:00',
           'created_at':'2012-03-18T10:40:30+01:00',
           'updated_at':'2012-03-18T10:40:30+01:00',
-          'type_human':'private message',
+          'type_human':'private_message',
           'status':'resolved',
           'unread':'false',
           'last_viewed_at':'2012-03-18T10:40:30+01:00',
