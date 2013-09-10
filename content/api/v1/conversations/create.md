@@ -16,7 +16,9 @@ You can create a conversation entry within the authenticated user and the recipi
   <dt>conversation[user_id]</dt>
   <dd>id for the recipient User to start the conversation with</dd>
   <dt>conversation[type_human]</dt>
-  <dd>Type of conversation. Either ``personal_message``, ``consultation`` or ``group_message``.</dd>
+  <dd>Type of conversation. Either <code>personal_message</code>, <code>consultation</code> or <code>group_message</code>.</dd>
+  <dt>conversation[conversation_service_id]</dt>
+  <dd>This is mandatory in case of <code>consultation</code>. This id can be found in the [Contacts section](/contacts). Leave blank otherwhise</dd>
 </dl>
 
 The response will be a JSON response containing the conversation and including an array of posts for each individual conversation and an array of conversation watchers.
