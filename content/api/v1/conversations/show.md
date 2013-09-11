@@ -39,7 +39,8 @@ Response:
             'conversation_id': 1,
             'body': 'Wow folks whats app',
             'created_at':'2012-03-18T10:40:30+01:00',
-            'updated_at':'2012-03-18T10:40:30+01:00'
+            'updated_at':'2012-03-18T10:40:30+01:00',
+            'attachment':null
           }]
           'watchers': [
           {

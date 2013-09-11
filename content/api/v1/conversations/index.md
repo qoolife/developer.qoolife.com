@@ -60,7 +60,8 @@ Response:
             'conversation_id':1,
             'body':'Lorem Ipsum',
             'created_at':'2011-07-19T09:41:47+02:00',
-            'updated_at':'2011-11-30T16:48:24+01:00'
+            'updated_at':'2011-11-30T16:48:24+01:00',
+            'attachment':null
           },
           {
             'id':2,
@@ -68,8 +69,18 @@ Response:
             'conversation_id':1,
             'body':'Mamet rosam',
             'created_at':'2011-07-19T09:41:47+02:00',
-            'updated_at':'2011-11-30T16:48:24+01:00'
+            'updated_at':'2011-11-30T16:48:24+01:00',
+            'attachment':null
           }
         ]
       }
     }
+
+
+The response can be filtered by posted date using the ```posted_after``` param and providing a datetime timestamp:
+
+Example request:
+
+    curl -v -u 'user@example.com:sekret' https://qoolife.com/api/v1/conversations?posted_after=1378917499
+
+will return conversations posted after 11st of september of 2013 (1378917499 seconds since epoch or ``Time.at(1378917499)`` if you prefer the Ruby style)
