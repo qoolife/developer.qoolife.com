@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <meta charset='utf-8'>
-    <title>Qoolife API V1 Post Attachments</title>
+    <title>Qoolife API V1 Attachments</title>
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
     <meta content='' name='description'>
     <meta content='' name='author'>
@@ -158,6 +158,28 @@
             
             <pre><code>curl -u 'user@example.com:sekret' -F 'post[body]=I say your message' -F 'post[attachment_asset]=@myfile' https://qoolife.com/api/v1/conversations/1/posts
             </code></pre>
+            
+            <h1 id="downloading-an-attachment">Downloading an attachment</h1>
+            
+            <p>Attachments are included in the json response as another nested attribute, if present.</p>
+            
+            <p>The response will be either the final (Amazon S3) attachment url in JSON format, or the file itself, depending if the request <code>send_file</code> attribute is set:</p>
+            
+            <pre><code>curl -u 'user@example.com:sekret' https://qoolife.com/api/v1/attachments/1/download?send_file=1
+            </code></pre>
+            
+            <p>will return the file in the response</p>
+            
+            <pre><code>curl -u 'user@example.com:sekret' https://qoolife.com/api/v1/attachments/1/download?send_file=0
+            </code></pre>
+            
+            <p>will return the url</p>
+            
+            <p>Response for the second request:</p>
+            
+            <p>{
+                “download_url”: “http://bucketname.s3-eu-west-1.amazonaws.com/1-file.png?AWSAccessKeyId=XXX&amp;Signature=XXX%3D&amp;Expires=1378916987”
+              }</p>
           </div>
         </div>
         <!-- /span -->
