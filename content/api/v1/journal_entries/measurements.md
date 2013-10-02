@@ -35,7 +35,8 @@ Response:
               'name':'Peso',
               'created_at':'2013-04-19T13:32:42+02:00',
               'updated_at':'2013-04-19T13:32:42+02:00'
-            }]
+            }],
+          'comments': []
         }
     }
 
@@ -126,6 +127,7 @@ Response:
           'id':1,
           'name':'Control del riesgo cardiovascular',
           'assignment_id':1,
+          'due_date':null,
           'service': {
             'id':525082,
             'name':'Clínica Qoolife',
@@ -153,6 +155,13 @@ Response:
               },
               'description':null
             }]
+          },{
+            'id':1,
+            'name':'Control del riesgo cardiovascular - Diario',
+            'assignment_id':1,
+            'due_date':'2013-04-19T13:32:42+02:00',
+            'service': { ... }
+            'variables': [{ .... }]
           }
         ]
     }
@@ -195,6 +204,7 @@ The response includes the measurements grouped under the *questionnaire_response
           'created_at':'2012-03-18T10:40:30+01:00',
           'updated_at':'2012-03-18T10:40:30+01:00',
           'measurements': [],
+          'comments': [],
           'questionnaire_responses':
           [{
             'id':1,

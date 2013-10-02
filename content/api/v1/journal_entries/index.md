@@ -8,7 +8,7 @@ You can get all journal entries for the authenticated user from:
 
     GET /api/v1/journal_entries
 
-The response will be a JSON array with all the journal entries for the user, including an array of measurements for each individual entry.
+The response will be a JSON array with all the journal entries for the user, including an array of measurements and comments for each individual entry.
 
 Example request:
 
@@ -42,6 +42,19 @@ Response:
               'created_at':'2013-04-19T13:32:42+02:00',
               'updated_at':'2013-04-19T13:32:42+02:00'
             }]
+          'comments':
+            [{
+              'id':1,
+              'body': "I'm a comment"
+              'created_at':'2013-04-19T13:32:42+02:00',
+              'updated_at':'2013-04-19T13:32:42+02:00'
+            },
+            {
+              'id':2,
+              'body': "No, I AM a comment"
+              'created_at':'2013-04-19T13:35:42+02:00',
+              'updated_at':'2013-04-19T13:35:42+02:00'
+            }]
         },
         {
           'id':610,
@@ -51,7 +64,8 @@ Response:
           'date':'2012-10-05T15:35:00+02:00',
           'created_at':'2012-03-18T10:40:30+01:00',
           'updated_at':'2012-03-18T10:40:30+01:00',
-          'measurements': []
+          'measurements': [],
+          'comments': []
         }
       ]
     }

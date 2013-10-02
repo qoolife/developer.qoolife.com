@@ -37,7 +37,8 @@ Response:
               'name':'Archivo',
               'created_at':'2013-04-19T13:32:42+02:00',
               'updated_at':'2013-04-19T13:32:42+02:00'
-            }]
+            }],
+          'comments': []
         }
     }
 

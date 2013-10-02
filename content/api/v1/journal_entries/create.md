@@ -41,7 +41,8 @@ Response:
           'date':'2012-10-05T15:35:00+02:00',
           'created_at':'2012-03-18T10:40:30+01:00',
           'updated_at':'2012-03-18T10:40:30+01:00',
-          'measurements': []
+          'measurements': [],
+          'comments': []
         }
     }
 
