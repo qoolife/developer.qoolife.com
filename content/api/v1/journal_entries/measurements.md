@@ -210,7 +210,7 @@ The response includes the measurements grouped under the *questionnaire_response
             'id':1,
             'questionnaire_id':1,
             'assignment_id':1,
-            'journal_entry_id':1,
+            'responseable_id':1,
             'measurements':
               [{
                 'id':1,
