@@ -163,7 +163,7 @@
             
             <h2 id="a-idtrackedvariablesa-tracked-variables"><a id="tracked_variables"></a> Tracked variables</h2>
             
-            <p>Tracked variables are variables that the user selected to track over time. Any number of this values can be measured with the corresponding Measurement, sent along with the JournalEntry data, under the attribute <strong>measurement_attributes</strong> (see (section above)[#measurements]).</p>
+            <p>Tracked variables are variables that the user selected to track over time. Any number of this values can be measured with the corresponding Measurement, sent along with the JournalEntry data, under the attribute <strong>measurements_attributes</strong> (see (section above)[#measurements]).</p>
             
             <p>Use this request to get the list of variables the logged user is currently tracking:</p>
             
@@ -300,7 +300,7 @@
               <dd>Id of the Questionnaire to be answered</dd>
               <dt>journal_entry[questionnaire_response_attributes][0][assignment_id]</dt>
               <dd>Param needed to mark dated assignments as done. Get this ID from the Questionnaires index request</dd>
-              <dt>journal_entry[questionnaire_response_attributes][0][measurement_attributes]</dt>
+              <dt>journal_entry[questionnaire_response_attributes][0][measurements_attributes]</dt>
               <dd>Array of measurements (see Measurement section)</dd>
             </dl>
             

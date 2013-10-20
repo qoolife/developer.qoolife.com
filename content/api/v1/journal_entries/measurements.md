@@ -49,7 +49,7 @@ Notes:
 
 ## <a id='tracked_variables'></a> Tracked variables
 
-Tracked variables are variables that the user selected to track over time. Any number of this values can be measured with the corresponding Measurement, sent along with the JournalEntry data, under the attribute **measurement_attributes** (see (section above)[#measurements]).
+Tracked variables are variables that the user selected to track over time. Any number of this values can be measured with the corresponding Measurement, sent along with the JournalEntry data, under the attribute **measurements_attributes** (see (section above)[#measurements]).
 
 Use this request to get the list of variables the logged user is currently tracking:
 
@@ -181,7 +181,7 @@ You need to provide the following params structure:
   <dd>Id of the Questionnaire to be answered</dd>
   <dt>journal_entry[questionnaire_response_attributes][0][assignment_id]</dt>
   <dd>Param needed to mark dated assignments as done. Get this ID from the Questionnaires index request</dd>
-  <dt>journal_entry[questionnaire_response_attributes][0][measurement_attributes]</dt>
+  <dt>journal_entry[questionnaire_response_attributes][0][measurements_attributes]</dt>
   <dd>Array of measurements (see Measurement section)</dd>
 </dl>
 
