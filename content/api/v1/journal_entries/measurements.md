@@ -43,7 +43,7 @@ Response:
 Notes:
 
 * That at the moment you need to know the variable_id in advance. Use 1 (Weight) for testing purposes.
-* ``Variable_type`` can take the following values: ``float``, ``boolean``, ``text``, ``likert``, ``file`` and ```date```. See (tracked variables section)[#tracked_variables] for more details on this.
+* ``Variable_type`` can take the following values: ``float``, ``boolean``, ``text``, ``likert``, ``file``, ```date```, ```bmi```, ```edd``` and ```blood_pressure```. See (tracked variables section)[#tracked_variables] for more details on this.
 
 # ¿Which variables to measure?
 
