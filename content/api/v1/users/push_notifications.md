@@ -10,12 +10,12 @@ depending the case.
 
 This actions are specifically designed for PUSH notifications within an App.
 
-    GET /api/v1/users/push_notifications/questionnaires
-    GET /api/v1/users/push_notifications/conversations
+    GET /api/v1/push_notifications/questionnaires
+    GET /api/v1/push_notifications/conversations
 
 Example request:
 
-    curl -v -u 'user@example.com:sekret' https://qoolife.com/api/v1/users/push_notifications/questionnaires
+    curl -v -u 'user@example.com:sekret' https://qoolife.com/api/v1/push_notifications/questionnaires
 
 Response:
 
