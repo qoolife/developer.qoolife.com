@@ -18,7 +18,9 @@ Response:
     HTTP/1.1 201 OK
 
     {
-      'token':AAABBBCCCZZZ
+      'token':AAABBBCCCZZZ,
+      'created_at': "2014-05-26T19:50:51+02:00',
+      'updated_at":"2014-05-26T19:50:51+02:00'
     }
 
 Example request (*delete*):
