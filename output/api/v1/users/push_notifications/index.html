@@ -115,7 +115,41 @@
         <!-- /span -->
         <div class='span10'>
           <div class='main-content well'>
-            <h1 id="user-push-notifications">User Push Notifications</h1>
+            <h1 id="device-registration---acs-tokens">Device registration - ACS tokens</h1>
+            
+            <p>Users (or Apps) can register their devices in Qoolife to receive Push Notifications. This section is particularly designed for Appcelerator ACS Push Notifications. There are basically to actions available: register and destroy a device through a ACS token:</p>
+            
+            <pre><code>POST /api/v1/pushable_devices
+            DELETE /api/v1/pushable_devices/&lt;token&gt;
+            </code></pre>
+            
+            <p>Example request (<em>create</em>):</p>
+            
+            <pre><code>curl -v -u 'user@example.com:sekret' -X POST -d 'pushable_device[token]=AAABBBCCCZZZ' https://qoolife.com/api/v1/pushable_devices
+            </code></pre>
+            
+            <p>Response:</p>
+            
+            <pre><code>HTTP/1.1 201 OK
+            
+            {
+              'token':AAABBBCCCZZZ
+            }
+            </code></pre>
+            
+            <p>Example request (<em>delete</em>):</p>
+            
+            <pre><code>curl -v -u 'user@example.com:sekret' -X DELETE https://qoolife.com/api/v1/pushable_devices/AAABBBCCCZZZ
+            </code></pre>
+            
+            <p>Response:</p>
+            
+            <pre><code>HTTP/1.1 204 OK
+            
+            {}
+            </code></pre>
+            
+            <h1 id="checking-pending-uses-push-notifications">Checking pending use’s push notifications</h1>
             
             <p>This notifications represent the pending of Questionnaires and Conversations for
             a given user at a given point of time. “Pending” means <em>unread</em> or <em>to fill in</em>
