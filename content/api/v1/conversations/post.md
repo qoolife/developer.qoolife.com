@@ -13,12 +13,31 @@ You can reply to an existing conversation submitting its data to:
   <dd>I say your message</dd>
 </dl>
 
-The response will be a JSON response containing the conversation and including an array of posts for each individual conversation, including the posted one, and an array of conversation watchers.
+There are two possible responses: a full response containing the conversation with all the posts and watchers, and a simple response with just the post. The last one is the default response; if you want to get the full response send the parameter ```response_type=full``` with your POST request.
 
-
-Example request:
+Example request with simple response (default):
 
     curl -u 'user@example.com:sekret' -X POST -d 'post[body]=I say your message' https://qoolife.com/api/v1/conversations/1/posts
+
+Response:
+
+    HTTP/1.1 201 Created
+
+    {
+      'post':
+        {
+          'id': 2,
+          'user_id': 2,
+          'conversation_id': 1,
+          'body': 'I saw your message',
+          'created_at':'2012-03-18T10:40:30+01:00',
+          'updated_at':'2012-03-18T10:40:30+01:00'
+        }
+    }
+
+Example request with full response:
+
+    curl -u 'user@example.com:sekret' -X POST -d 'post[body]=I say your message;response_type=full' https://qoolife.com/api/v1/conversations/1/posts
 
 Response:
 
