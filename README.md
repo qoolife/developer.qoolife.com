@@ -1,4 +1,6 @@
-# developer.Qoolife.com
+# developer.qoolife.com
+
+[![Dependency Status](https://gemnasium.com/qoolife/developer.qoolife.com.svg)](https://gemnasium.com/qoolife/developer.qoolife.com)
 
 This is the developer documentation site for the [Qoolife Developer Portal](http://developer.Qoolife.com).
 
