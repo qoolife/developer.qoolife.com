@@ -50,4 +50,4 @@ Response:
 
 You can add measurements to the journal entry, according to variables the user chooses to track, or to variable sets (Questionnaires) the user is assigned to fill in.
 
-See more about this in the (Measurements section)[/journal_entries/measurements] and (Questionnaires section)[/journal_entries/measurements#questionnaires]
+See more about this in the [Measurements section](/journal_entries/measurements) and [Questionnaires section](/journal_entries/measurements#questionnaires)

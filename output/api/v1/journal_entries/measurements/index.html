@@ -159,14 +159,14 @@
             
             <ul>
               <li>That at the moment you need to know the variable_id in advance. Use 1 (Weight) for testing purposes.</li>
-              <li><code>Variable_type</code> can take the following values: <code>float</code>, <code>boolean</code>, <code>text</code>, <code>likert</code>, <code>file</code>, <code>date</code>, <code>bmi</code>, <code>edd</code> and <code>blood_pressure</code>. See (tracked variables section)[#tracked_variables] for more details on this.</li>
+              <li><code>Variable_type</code> can take the following values: <code>float</code>, <code>boolean</code>, <code>text</code>, <code>likert</code>, <code>file</code>, <code>date</code>, <code>bmi</code>, <code>edd</code>, <code>blood_pressure</code>, <code>weight</code>, <code>height</code>, <code>weight_at_birth</code>, <code>height_at_birth</code> and <code>ecg</code>. See <a href="#tracked_variables">tracked variables section</a> for more details on this.</li>
             </ul>
             
             <h1 id="which-variables-to-measure">¿Which variables to measure?</h1>
             
             <h2 id="a-idtrackedvariablesa-tracked-variables"><a id="tracked_variables"></a> Tracked variables</h2>
             
-            <p>Tracked variables are variables that the user selected to track over time. Any number of this values can be measured with the corresponding Measurement, sent along with the JournalEntry data, under the attribute <strong>measurements_attributes</strong> (see (section above)[#measurements]).</p>
+            <p>Tracked variables are variables that the user selected to track over time. Any number of this values can be measured with the corresponding Measurement, sent along with the JournalEntry data, under the attribute <strong>measurements_attributes</strong> (see <a href="#measurements">section above</a>).</p>
             
             <p>Use this request to get the list of variables the logged user is currently tracking:</p>
             

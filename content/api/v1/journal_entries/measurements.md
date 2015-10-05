@@ -43,13 +43,13 @@ Response:
 Notes:
 
 * That at the moment you need to know the variable_id in advance. Use 1 (Weight) for testing purposes.
-* ``Variable_type`` can take the following values: ``float``, ``boolean``, ``text``, ``likert``, ``file``, ```date```, ```bmi```, ```edd``` and ```blood_pressure```. See (tracked variables section)[#tracked_variables] for more details on this.
+* ``Variable_type`` can take the following values: ``float``, ``boolean``, ``text``, ``likert``, ``file``, ```date```, ```bmi```, ```edd```, ```blood_pressure```, ```weight```, ```height```, ```weight_at_birth```, ```height_at_birth``` and ```ecg```. See [tracked variables section](#tracked_variables) for more details on this.
 
 # ¿Which variables to measure?
 
 ## <a id='tracked_variables'></a> Tracked variables
 
-Tracked variables are variables that the user selected to track over time. Any number of this values can be measured with the corresponding Measurement, sent along with the JournalEntry data, under the attribute **measurements_attributes** (see (section above)[#measurements]).
+Tracked variables are variables that the user selected to track over time. Any number of this values can be measured with the corresponding Measurement, sent along with the JournalEntry data, under the attribute **measurements_attributes** (see [section above](#measurements)).
 
 Use this request to get the list of variables the logged user is currently tracking:
 
