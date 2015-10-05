@@ -15,11 +15,11 @@ gem 'compass'
 
 group :development do
   # Nanoc for compiling dynamic code
-  gem 'nanoc', '~> 3.6.3'
+  gem 'nanoc', '~> 3.8'
   gem "guard-nanoc"
 
   # Kramdown for markdown syntax
-  gem 'kramdown', '~> 0.13.2'
+  gem 'kramdown'
   gem 'nokogiri', '~> 1.6'
 
   # HAML / SASS syntax
